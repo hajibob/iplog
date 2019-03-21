@@ -1,0 +1,28 @@
+#!/usr/bin/python3
+
+# iplogger
+
+import datetime
+import requests
+x = requests.get('https://ifconfig.me/ip')
+ip =x.text
+
+print(ip)
+
+
+f = open("/var/log/iplog" ,"r").readlines()
+
+for x in f:
+    iplist = x.split()
+    ips=iplist[2]
+    if ips == ip:
+        print(ips+"  >>>  BAD IP")
+
+
+# Dates & Write
+x = datetime.datetime.now()
+
+dates= x.strftime("\n%x %X ")
+
+d = open("/var/log/iplog", "a")
+d.write(dates + ip) 
