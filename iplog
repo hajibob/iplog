@@ -16,7 +16,7 @@ for x in f:
     iplist = x.split()
     ips=iplist[2]
     if ips == ip:
-        print(ips+"  >>>  BAD IP")
+        print(ips + "  >>>  BAD IP :: " + iplist[0])
 
 
 # Dates & Write
@@ -25,4 +25,5 @@ x = datetime.datetime.now()
 dates= x.strftime("\n%x %X ")
 
 d = open("/var/log/iplog", "a")
+#d = open("tmp-iplog", "a")
 d.write(dates + ip) 
