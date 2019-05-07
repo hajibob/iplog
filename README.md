@@ -13,4 +13,4 @@
 + [ ] fix problems with blank line
 + [ ] fix problem with "\n" first run
 + [ ] make pretty
-+ [ ] report date "BAD IP" was used
++ [x] report date "BAD IP" was used
