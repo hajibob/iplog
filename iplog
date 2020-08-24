@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# iplogger
+# iplog
 
 import datetime
 import requests
@@ -9,7 +9,6 @@ ip =x.text
 
 print(ip)
 
-
 f = open("/var/log/iplog" ,"r").readlines()
 
 for x in f:
@@ -17,7 +16,6 @@ for x in f:
     ips=iplist[2]
     if ips == ip:
         print(ips + "  >>>  BAD IP :: " + iplist[0])
-
 
 # Dates & Write
 x = datetime.datetime.now()
